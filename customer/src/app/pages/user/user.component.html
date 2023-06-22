@@ -1,0 +1,26 @@
+<div class="user-container">
+    <h1>User Details</h1>
+    <div class="user-details">
+        <div class="detail">
+            <label>Username:</label>
+            <span>{{ username }}</span>
+        </div>
+        <div class="detail">
+            <label>Email:</label>
+            <span>{{ email }}</span>
+        </div>
+        <div class="detail">
+            <label>Address:</label>
+            <span>{{ address }}</span>
+        </div>
+        <div class="detail">
+            <label>PhoneNumber:</label>
+            <span>{{ phonenumber }}</span>
+        </div>
+        <div class="detail">
+            <label>DOB:</label>
+            <span>{{ dob }}</span>
+        </div>
+    </div>
+    <button class="edit-button" (click)="editUser()">Edit</button>
+</div>

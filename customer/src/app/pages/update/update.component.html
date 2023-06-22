@@ -1,0 +1,44 @@
+<div class="user-container">
+    <h1>User Details Update Page</h1>
+    <div class="user-details">
+        <form (submit)="update()">
+            <div class=" detail">
+                <label>Username:</label>
+                <!-- <span>{{ username }}</span> -->
+                <!-- component.html -->
+                <input type="text" [defaultValue]="username" name="username" [(ngModel)]="username">
+
+            </div>
+            <div class="detail">
+                <label>Email:</label>
+                <!-- <span>{{ email }}</span> -->
+                <!-- component.html -->
+                <input type="email" [defaultValue]="email" name="email" [(ngModel)]="email">
+
+            </div>
+            <div class="detail">
+                <label>Address:</label>
+                <!-- <span>{{ address }}</span> -->
+                <!-- component.html -->
+                <!-- <input type="text" [value]="address" (input)="address = $event.target.value"> -->
+                <input type="text" [defaultValue]="address" name="address" [(ngModel)]="address">
+
+            </div>
+            <div class="detail">
+                <label>PhoneNumber:</label>
+                <!-- <span>{{ phonenumber }}</span> -->
+                <!-- component.html -->
+                <!-- <input type="text" [value]="phonenumber" (input)="phonenumber = $event.target.value"> -->
+                <input type="text" [defaultValue]="phonenumber" name="phonenumber" [(ngModel)]="phonenumber">
+
+            </div>
+            <div class="detail">
+                <label>DOB:</label>
+                <!-- <span>{{ dob }}</span> -->
+                <!-- component.html -->
+                <!-- <input type="text" [value]="dob" (input)="dob = $event.target.value"> -->
+                <input type="date" [defaultValue]="dob" name="dob" [(ngModel)]="dob">
+            </div>
+            <button class="edit-button">Update</button>
+        </form>
+    </div>

@@ -1,0 +1,30 @@
+<div class="admin-container">
+    <h2>Registered Users</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Date of Birth</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.dob }}</td>
+                <td>{{ user.phoneNumber }}</td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="update-button" (click)="updateUser(user.user_id)">Update</button>
+                        <button class="delete-button" (click)="deleteUser(user.user_id)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
