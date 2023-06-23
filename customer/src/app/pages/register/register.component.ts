@@ -23,8 +23,13 @@ export class RegisterComponent {
       password: this.password,
       conpassword: this.conpassword
     }).subscribe((res: any) => {
+      if (!(res == false)) {
+        this.router.navigate(['/login'])
+      }
+      else {
+        this.router.navigate(['/register'])
+      }
       console.log(res);
-      this.router.navigate(['/login'])
     })
   }
 }

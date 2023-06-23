@@ -20,7 +20,8 @@ const userRegister = (req, res) => {
     db.query(q, [req.body.email, req.body.username], (err, data) => {
         if (err) return console.log(err);
         // if (data.length) return res.json("User already exists!");
-        if (data.length == 0) return res.json(false);
+        if (data.length) return res.json(false);
+
         const salt = bcrypt.genSaltSync(2);
         const hash = bcrypt.hashSync(req.body.password, salt);
 
@@ -29,8 +30,8 @@ const userRegister = (req, res) => {
 
         db.query(q, [values], (err, data) => {
             if (err) return res.json(err);
-            // return res.json("User has been created.");
-            return res.json(data);
+            return res.json("User has been created.");
+            // return res.json(data);
         });
     });
 }
@@ -72,13 +73,13 @@ const singleUser = (req, res) => {
     const id = req.params.id
     db.query("SELECT * FROM userdetails WHERE user_id = ?", [id], (error, results) => {
         if (!error) {
+            console.log(results);
             res.json(results)
         }
         else {
             console.log(error);
         }
     })
-
 }
 
 const update = (req, res) => {

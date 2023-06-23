@@ -16,7 +16,7 @@ export class RootComponent {
 
   adminLogin() {
 
-    this.router.navigate(['/login'])
+    this.router.navigate(['/admin/login'])
   }
   nav() {
 

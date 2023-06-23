@@ -16,7 +16,7 @@ export class UpdateComponent implements OnInit {
     console.log(this.dataObj);
     this.http.get(`http://localhost:8080/user/${this.dataObj}`).subscribe((res: any) => {
       this.mydata = res[0]
-      console.log(this.mydata);
+      console.log(this.mydata, "mydata");
 
       this.username = this.mydata.username
       this.email = this.mydata.email

@@ -17,6 +17,7 @@ export class LoginComponent {
   login() {
     this.http.post("http://localhost:8080/user/login", { email: this.email, password: this.password }).subscribe((res: any) => {
       if (res.bool == true) {
+        localStorage.removeItem("mydata")
         localStorage.setItem("mydata", JSON.stringify(res.data))
         this.router.navigate([`/user/${res.data.user_id}`])
       }
